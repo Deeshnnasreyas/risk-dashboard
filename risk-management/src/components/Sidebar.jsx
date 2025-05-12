@@ -20,15 +20,38 @@ const Sidebar = ({ isSidebarOpen, setSidebarOpen }) => {
           <Dot isSidebarOpen={isSidebarOpen} />
         </button>
       </div>
-      <nav className="flex flex-col gap-[8px] p-4 text-[#231F1F] w-[52px] items-center justify-center">
-        {sidebarMenu.map((item, index) => (
-          <NavItem
-            key={index}
-            icon={<img src={item?.icon} alt="Dashboard" className="" />}
-            label={item?.label}
-            isOpen={isSidebarOpen}
-          />
-        ))}
+      <nav
+        className={`flex flex-col gap-[8px] p-4 text-[#231F1F] h-[90vh] items-center justify-center ${
+          isSidebarOpen ? "w-full" : " w-[52px]"
+        }`}
+      >
+        <div className="flex flex-col h-full justify-between">
+          {/* Top Nav Items */}
+          <div className="flex flex-col gap-2">
+            {sidebarMenu.slice(0, -1).map((item, index) => (
+              <NavItem
+                key={index}
+                icon={<img src={item.icon} alt={item.label} />}
+                label={item.label}
+                isOpen={isSidebarOpen}
+              />
+            ))}
+          </div>
+
+          {/* Last Nav Item at Bottom */}
+          <div className="mt-auto">
+            <NavItem
+              icon={
+                <img
+                  src={sidebarMenu[sidebarMenu.length - 1].icon}
+                  alt={sidebarMenu[sidebarMenu.length - 1].label}
+                />
+              }
+              label={sidebarMenu[sidebarMenu.length - 1].label}
+              isOpen={isSidebarOpen}
+            />
+          </div>
+        </div>
       </nav>
     </div>
   );

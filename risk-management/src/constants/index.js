@@ -2,9 +2,9 @@ import HomeIcon from "../assets/Home.svg";
 import MessageIcon from "../assets/Message.svg";
 import ReportlistIcon from "../assets/Reportlist.svg";
 import ReportbaseIcon from "../assets/Reportbase.svg";
-import ReportItemIcon from "../assets/ReportItem.svg";
 import BookmarkIcon from "../assets/Bookmark.svg";
 import NotificationIcon from "../assets/Notification.svg";
+import SettingIcon from "../assets/Setting.svg";
 import InfoIcon from "../assets/Info.svg";
 export const riskPriority = [
   {
@@ -55,8 +55,8 @@ export const sidebarMenu = [
     label: "Dashboard",
   },
   {
-    icon: ReportItemIcon,
-    label: "Dashboard",
+    icon: SettingIcon,
+    label: "Settings",
   },
 ];
 export const riskData = [
